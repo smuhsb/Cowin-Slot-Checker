@@ -1,1 +1,1 @@
-# Cowin-Slot-Checker
+# Cowin Slot Checker
