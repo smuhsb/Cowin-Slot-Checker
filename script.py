@@ -45,5 +45,4 @@ if data:
     df.sort_values(by=['Date'], inplace=True)
     df['Slots'] = pd.to_numeric(df['Slots'])
     df = df.groupby(['Date']).sum().reset_index()
-
-print(df)
+    print(df)
