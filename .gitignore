@@ -1,0 +1,5 @@
+.venv
+.vscode
+variable.py
+pywhatkit_dbs.txt
+__pycache__

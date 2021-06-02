@@ -6,6 +6,9 @@ from requests.models import Response
 
 import pandas as pd
 
+import pywhatkit as msg
+import variable
+
 # District ID for Gulbarga, Karnataka
 districtId = "267"     
 
@@ -21,9 +24,6 @@ URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDi
 
 # HTTP Request
 result = requests.get(URL)
-
-if districtId == '267':
-    print(URL)
 
 if result.ok:
     ResponseJson = result.json()
@@ -46,3 +46,6 @@ if data:
     df['Slots'] = pd.to_numeric(df['Slots'])
     df = df.groupby(['Date']).sum().reset_index()
     print(df)
+
+    msg.sendwhatmsg_instantly(phone_no=variable.phone,message='Slots found!')
+    msg.sendwhatmsg_instantly(phone_no=variable.phone,message='This is an Auto-Generated Message')
